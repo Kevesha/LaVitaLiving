@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ViewProdcuts";
+}
+
+<h2>ViewProdcuts</h2>
+  <script src = "~/Scripts/jquery-1.10.2.min.js" > </script> 
+<script type="text/javascript">
+    $(document).ready(function () {
+        var a = "Test";
+        $.ajax({
+            url: "Home/View",
+            type: "GET",
+            success: function (response) {
+                alert(response);
+            },
+            error: function (response) {
+                alert(response);
+            }
+        });
+    });
+</script>

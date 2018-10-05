@@ -1,0 +1,20 @@
+﻿@model LaVitaLiving.Models.User
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="offset-5">
+    @using (Html.BeginForm("AddNewUser", "Home", FormMethod.Post))
+    {
+        <form>
+            <div class="form-group">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", placeholder = "UserName", required = "required" } })
+            </div>
+            <div class="form-group">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control", placeholder = "Password", required = "required" } })
+            </div>
+            <button type="submit" class="btn btn-outline-info offset-2">Save</button>
+        </form>
+    }
+</div>
+
