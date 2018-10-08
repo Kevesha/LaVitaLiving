@@ -6,7 +6,7 @@
     ViewBag.Icon = "fa fa-eye";
 }
 
-
+<div class="col-10 offset-1">
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -30,4 +30,5 @@
         }
     </tbody>
 </table>
+</div>
 <button class="btn btn-outline-info offset-5"> @Html.ActionLink("View My Cart", "MyCart",new { @UserID = @ID })</button>
