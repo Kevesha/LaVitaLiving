@@ -74,6 +74,7 @@ namespace LaVita.Controllers
         {
             using (LaVitaEntities db = new LaVitaEntities())
             {
+
                 var carts = db.Carts.SqlQuery("Select * from Cart c Join Products p on p.ProductID = c.ProductId Where c.UserId ="+int.Parse(UserID)).ToList();
                 List<object> tempList = new List<object>();
                 int sum = 0;
@@ -82,6 +83,7 @@ namespace LaVita.Controllers
                 {
                     var prodKey = carts[i].ProductId;
                     var allProducts = db.Products.SqlQuery("Select * From Products p Where p.ProductID =" + prodKey).FirstOrDefault();
+                    
                     cartID.Add(carts[i].CartID);
                     sum += int.Parse(allProducts.Price);
                     tempList.Add(allProducts);

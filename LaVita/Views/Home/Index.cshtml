@@ -7,20 +7,12 @@
 <div class="col-6 offset-3">
     @using (Html.BeginForm("Autherize", "Home", FormMethod.Post))
     {
-    <form>
-        <div class="row">
-            <div class="form-group col-5">
-                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control  col-12", placeholder = "UserName", required = "required" } })
-            </div>
-            <div class="form-group col-5">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control col-12", placeholder = "Password", required = "required" } })
-            </div>
-        </div>
-        <div class="row offset-1">
-            <button type="submit" class="btn btn-outline-success col-3 m-1">Sign in</button>
-            <button class="btn btn-outline-info col-3 m-1"> @Html.ActionLink("Register", "Register")</button>
-            <button class="btn btn-outline-info col-3 col-sm-6 m-1">@Html.ActionLink("Forgot Password", "ForgotPassword")</button>
-        </div>
-    </form>
-}
-    </div>
+        <form>
+            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control col-sm-12 m-1 form-group", placeholder = "UserName", required = "required" } })
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "col-sm-12 m-1 form-control form-group col-12", placeholder = "Password", required = "required" } })
+            <button class="btn btn-outline-info col-sm-12 m-1 col-3"> @Html.ActionLink("Register", "Register")</button>
+            <button class="btn btn-outline-info col-sm-12 m-1 col-3">@Html.ActionLink("Forgot Password", "ForgotPassword")</button>
+            <button type="submit" class="btn btn-outline-success col-sm-12 col-3 m-1">Sign in</button>
+        </form>
+    }
+</div>

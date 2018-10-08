@@ -7,28 +7,31 @@
 }
 
 <div class="col-10 offset-1">
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Number</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Description</th>
-            <th scope="col">Add To Cart</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in ViewBag.Data)
-        {
+    <table class="table">
+        <thead class="thead-dark">
             <tr>
-                <td>@item.ProductID</td>
-                <td>@item.Name</td>
-                <td>@item.Price</td>
-                <td>@item.Description</td>
-                <td><button class="btn btn-outline-success"> @Html.ActionLink("Add to cart", "AddToCart", new { @UserID = @ID, @ProductID = @item.ProductID })</button></td>
+                <th scope="col">Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Add To Cart</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Data)
+            {
+                <tr>
+                    <td>@item.ProductID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Description</td>
+                    <td><button class="btn btn-outline-success"> @Html.ActionLink("Add to cart", "AddToCart", new { @UserID = @ID, @ProductID = @item.ProductID })</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
-<button class="btn btn-outline-info offset-5"> @Html.ActionLink("View My Cart", "MyCart",new { @UserID = @ID })</button>
+<div class="row">
+    <button class="btn btn-outline-info offset-4"> @Html.ActionLink("View My Cart", "MyCart", new { @UserID = @ID })</button>
+    <button class="btn btn-outline-info  offset-1"> @Html.ActionLink("Log Out", "Index")</button>
+</div>

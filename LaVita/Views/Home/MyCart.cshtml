@@ -5,26 +5,33 @@
     var ID = Session["ID"];
     ViewBag.Icon = "fa fa-cart";
 }
-
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Description</th>
-            <th scope="col">Remove from cart</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in ViewBag.Data)
-        {
+<div class="col-10 offset-1">
+    <table class="table">
+        <thead class="thead-dark">
             <tr>
-                <td>@item.ProductID</td>
-                <td>@item.Price</td>
-                <td>@item.Description</td>
-                <td><button class="btn btn-outline-success"> @Html.ActionLink("Remove", "Delete", new { htmlAttributes = new { @CartID = "CartID", @UserId = "UserId", @ProductId = "ProductId" } })</button></td>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Data)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Description</td>
+                    @*<td><button class="btn btn-outline-success"> @Html.ActionLink("Remove", "Delete", new { @CartID = "CartID"})</button></td>*@
+                </tr>
+            }
+        </tbody>
+        <tfoot class="thead-dark">
+            <tr>
+                <th scope="col">Sum of items:</th>
+                <th scope="col">@ViewBag.OrderTotal</th>
+                <th scope="col"></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
 <button class="btn btn-outline-info offset-5"> @Html.ActionLink("Log Out", "Index")</button>
