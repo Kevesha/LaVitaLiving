@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Receipt";
+    var ID = Session["ID"];
+    
+}
+<button class="btn btn-outline-info offset-5"> @Html.ActionLink("View My Receipt", "Receipt", new { @UserID = @ID})</button>
+
+@foreach (var item in ViewBag.Data)
+{
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+}
+    <button class="btn btn-outline-info offset-5"> @Html.ActionLink("Log Out", "Index")</button>

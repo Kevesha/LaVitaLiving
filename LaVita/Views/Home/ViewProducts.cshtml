@@ -1,0 +1,33 @@
+﻿@model LaVita.Models.Product
+
+@{
+    ViewBag.Title = "View All Products";
+    var ID = Session["ID"];
+    ViewBag.Icon = "fa fa-eye";
+}
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Add To Cart</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Data)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Description</td>
+                <td><button class="btn btn-outline-success"> @Html.ActionLink("Add to cart", "AddToCart", new { @UserID = @ID, @ProductID = @item.ProductID })</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-outline-info offset-5"> @Html.ActionLink("View My Cart", "MyCart",new { @UserID = @ID })</button>

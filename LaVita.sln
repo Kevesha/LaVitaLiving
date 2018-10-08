@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaVita", "LaVita\LaVita.csproj", "{5E5E3109-0478-43F8-A9D3-3CF068A52660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaVita.Tests", "LaVita.Tests\LaVita.Tests.csproj", "{6853970E-CF7E-4782-BA41-FF38A42F0203}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E5E3109-0478-43F8-A9D3-3CF068A52660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5E3109-0478-43F8-A9D3-3CF068A52660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5E3109-0478-43F8-A9D3-3CF068A52660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5E3109-0478-43F8-A9D3-3CF068A52660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6853970E-CF7E-4782-BA41-FF38A42F0203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6853970E-CF7E-4782-BA41-FF38A42F0203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6853970E-CF7E-4782-BA41-FF38A42F0203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6853970E-CF7E-4782-BA41-FF38A42F0203}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35B934C7-B783-46B5-AE65-723483D96CF0}
+	EndGlobalSection
+EndGlobal

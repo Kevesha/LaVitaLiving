@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - LaVita Living Assesment</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fontawesome/css/font-awesome.min.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="display-4 text-center">@ViewBag.Title Page  <i class="@ViewBag.Icon" aria-hidden="true"></i></div>
+    <br/>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
