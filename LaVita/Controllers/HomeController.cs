@@ -75,13 +75,21 @@ namespace LaVita.Controllers
             using (LaVitaEntities db = new LaVitaEntities())
             {
                 var carts = db.Carts.SqlQuery("Select * from Cart c Join Products p on p.ProductID = c.ProductId Where c.UserId ="+int.Parse(UserID)).ToList();
-                object tempList = "";
+                List<object> tempList = new List<object>();
+                int sum = 0;
+                List<int> cartID = new List<int>();
                 for (int i = 0; i < carts.Count; i++)
                 {
-                    var y = carts[i].ProductId;
-                    tempList = db.Products.SqlQuery("Select * From Products p Where p.ProductID ="+y).ToList();
+                    var prodKey = carts[i].ProductId;
+                    var allProducts = db.Products.SqlQuery("Select * From Products p Where p.ProductID =" + prodKey).FirstOrDefault();
+                    cartID.Add(carts[i].CartID);
+                    sum += int.Parse(allProducts.Price);
+                    tempList.Add(allProducts);
                 }
+                ViewBag.Carts = carts;
                 ViewBag.Data = tempList;
+                ViewBag.OrderTotal = sum;
+                
                 return View();
             }
         }
@@ -115,11 +123,11 @@ namespace LaVita.Controllers
             }
             RedirectToAction("ViewProducts");
         }
-        public ActionResult Delete(Cart cart)
+        public ActionResult Delete(int CartID)
         {
             using (LaVitaEntities db = new LaVitaEntities())
             {
-                db.Carts.Remove(db.Carts.Find(cart));
+                db.Carts.SqlQuery("DELETE FROM Carts c Where c.CartID="+CartID);
                 db.SaveChanges();
             }
             return View("MyCart");

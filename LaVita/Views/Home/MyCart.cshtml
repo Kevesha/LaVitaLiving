@@ -19,9 +19,10 @@
         @foreach (var item in ViewBag.Data)
         {
             <tr>
-                <td>@item.UserID</td>
                 <td>@item.ProductID</td>
-                <td><button class="btn btn-outline-success"> @Html.ActionLink("Remove", "Delete", new { htmlAttributes = new { @CartID = "CartID", @UserId = "UserId", @ProductId = "ProductId" } })</button></td>
+                <td>@item.Price</td>
+                <td>@item.Description</td>
+                <td><button id="@ViewBag.Cart.item.CartID" class="btn btn-outline-success"> @Html.ActionLink("Remove", "Delete", new { htmlAttributes = new { @CartID = "CartID", @UserId = "UserId", @ProductId = "ProductId" } })</button></td>
             </tr>
         }
     </tbody>
