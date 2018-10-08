@@ -75,10 +75,11 @@ namespace LaVita.Controllers
             using (LaVitaEntities db = new LaVitaEntities())
             {
                 var carts = db.Carts.SqlQuery("Select * from Cart c Join Products p on p.ProductID = c.ProductId Where c.UserId ="+int.Parse(UserID)).ToList();
-                List<Product> tempList = new List<Product>();
+                object tempList = "";
                 for (int i = 0; i < carts.Count; i++)
                 {
-                    tempList.Add(db.Products.Find(db.Products.Where(x=> x.ProductID == carts[i].ProductId).FirstOrDefault()));
+                    var y = carts[i].ProductId;
+                    tempList = db.Products.SqlQuery("Select * From Products p Where p.ProductID ="+y).ToList();
                 }
                 ViewBag.Data = tempList;
                 return View();
