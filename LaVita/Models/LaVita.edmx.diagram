@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="LaVitaModel.Product" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LaVitaModel.Cart" Width="1.5" PointX="5" PointY="0.75" />
         <EntityTypeShape EntityType="LaVitaModel.User" Width="1.5" PointX="4.125" PointY="3" />
-        <AssociationConnector Association="LaVitaModel.FK__Cart__ProductId__17036CC0" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
