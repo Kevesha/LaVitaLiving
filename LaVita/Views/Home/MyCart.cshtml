@@ -22,7 +22,7 @@
                 <td>@item.ProductID</td>
                 <td>@item.Price</td>
                 <td>@item.Description</td>
-                <td><button id="@ViewBag.Cart.item.CartID" class="btn btn-outline-success"> @Html.ActionLink("Remove", "Delete", new { htmlAttributes = new { @CartID = "CartID", @UserId = "UserId", @ProductId = "ProductId" } })</button></td>
+                <td><button class="btn btn-outline-success"> @Html.ActionLink("Remove", "Delete", new { htmlAttributes = new { @CartID = "CartID", @UserId = "UserId", @ProductId = "ProductId" } })</button></td>
             </tr>
         }
     </tbody>
